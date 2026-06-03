@@ -1,19 +1,18 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const cors = require("cors");
 const usuarioRoutes = require("./routes/usuarioRoutes");
+const favoritoRoutes = require("./routes/favoritoRoutes");
 const app = express();
 const PORT = 3000;
     
-// Conectar ao MongoDB
 connectDB();
-    
-// Middleware para interpretação de JSON
+
+app.use(cors());
 app.use(express.json());
-    
-// Rotas
 app.use("/usuarios", usuarioRoutes);
-    
-// Iniciar o servidor
+app.use("/favoritos", favoritoRoutes);
+
 app.listen(PORT, () => {
       console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
