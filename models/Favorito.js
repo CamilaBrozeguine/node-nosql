@@ -11,6 +11,10 @@ const favoritoSchema = new mongoose.Schema({
     thumbnail: String,
     anotacao: {type: String, default: ''},
     musicaLink: {type: String, default: ''},
+    status: {type: String, default: 'Não iniciado'},
+    genero: {type: String, default: ''},
+    dataInicio: {type: Date, default: null},
+    dataTermino: {type: Date, default: null},
     fonteEscolhida: {type: String, default: 'Google Books'}
 });
     
