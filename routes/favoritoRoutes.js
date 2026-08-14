@@ -1,11 +1,12 @@
+// ← adiciona essa opção no express
 const express = require('express');
-const router = express.Router();
-
+const router = express.Router({ strict: false });
 const favoritosController = require('../controllers/favoritosController');
+const auth = require('../middleware/auth');
 
-router.get('/',  auth, favoritosController.obterFavoritos);
+router.get('/', auth, favoritosController.obterFavoritos);
 router.post('/', auth, favoritosController.adicionarFavorito);
-router.patch('/:googleBookId', auth, favoritosController.atualizarFavorito);
-router.delete('/:googleBookId', auth, favoritosController.removerFavorito);
+router.delete('/:id', auth, favoritosController.removerFavorito);
+router.patch('/:id', auth, favoritosController.atualizarFavorito);
 
 module.exports = router;

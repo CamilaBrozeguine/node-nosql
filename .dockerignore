@@ -1,0 +1,11 @@
+node_modules
+.env
+serviceAccount.json
+*.log
+node_modules
+.env
+serviceAccount.json
+*.log
+.git
+.gitignore
+

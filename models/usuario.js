@@ -6,11 +6,6 @@ const usuariosSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-     idade:{
-        type: Number,
-        required: true,
-        min: 0,
-     },
      email:{
         type: String,
         required: true,

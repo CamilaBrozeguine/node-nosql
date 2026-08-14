@@ -25,4 +25,6 @@ Thumbs.db
 
 .vscode/
 .idea/
+/serviceAccount.json
+serviceAccount.json
 /generated/prisma

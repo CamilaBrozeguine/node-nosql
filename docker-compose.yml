@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # container do MongoDB
+  mongodb:
+    image: mongo:7
+    container_name: mybooks-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db  # ← persiste os dados
+
+  # container do backend
+  backend:
+    build: .
+    container_name: mybooks-backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/node_nosql  
+      - mongodb  
+
+volumes:
+  mongo-data:  # ← volume persistente pros dados

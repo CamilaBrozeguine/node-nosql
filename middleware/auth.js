@@ -1,5 +1,6 @@
-const jwt = require('jsonwebtoken');
-const SECRET = process.env.JWT_SECRET ||'minha_chave_secreta';
+const { verify } = require('jsonwebtoken');
+
+const SECRET = process.env.JWT_SECRET || 'segredo_super_secreto';
 
 module.exports = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -13,10 +14,10 @@ module.exports = (req, res, next) => {
     }
 
     try {
-        const decoded = jwt.verify(token, SECRET);
+        const decoded = verify(token, SECRET);
         req.user = decoded;
         next();
     } catch (error) {
         return res.status(401).json({ message: 'Token inválido' });
     }
-}
+};
