@@ -73,14 +73,14 @@ cd node-nosql
 npm install
 
 
-## 📝 Notas de Desenvolvimento
+##  Notas de Desenvolvimento
 
 - Validações de email e idade são feitas pelo Mongoose
 - O campo `email` é único, prevenindo duplicatas
 - Todos os campos são obrigatórios
 - Use `nodemon` para desenvolvimento com auto-reload
 
-## 🔮 Melhorias Futuras
+##  Melhorias Futuras
 
 - [ ] Autenticação e autorização (JWT)
 - [ ] Paginação na listagem de usuários
@@ -90,7 +90,7 @@ npm install
 - [ ] Docker para containerização
 - [ ] Variáveis de ambiente (.env)
 
-## 📄 Licença
+##  Licença
 
 ISC
 
